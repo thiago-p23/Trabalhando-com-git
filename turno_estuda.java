@@ -2,20 +2,26 @@ import static java.lang.IO.*;
 
 void main() {
 
-    //Entrada
+    // Entrada
+    println("Digite o turno em que você estuda (M, T ou N): ");
+    String turno = readln();
 
-    println("digite o turno do dia em que voce estuda (M, T ou N) ");
-    String turno_de_estudo = readln();
+    // Processo + Saída
+    switch (turno) {
 
-    //Processo + Saida
+        case "M":
+            println("Bom dia!");
+            break;
 
-    if (turno_de_estudo.equals("M")){
-        println("bom dia");
-    } else if (turno_de_estudo.equals("T")) {
-        println("boa tarde");
-    } else if (turno_de_estudo.equals("N")) {
-        println("boa noite");
-    } else{
-        println("valor invalido");
+        case "T":
+            println("Boa tarde!");
+            break;
+
+        case "N":
+            println("Boa noite!");
+            break;
+
+        default:
+            println("Valor inválido!");
     }
 }
