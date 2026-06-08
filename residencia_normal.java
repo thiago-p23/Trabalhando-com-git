@@ -2,26 +2,25 @@ import static java.lang.IO.*;
 
 void main() {
 
-    //Entrada
-
-    println("insira seu consumo mensal de agua no me em m3: ");
+    println("Informe o consumo mensal de água (m³):");
     float consumo = Float.parseFloat(readln());
 
-    //Processo + Saida
+    double custo = 0;
 
-    if (consumo <= 10) {
-        println("a sua conta foi: R$ 7,59");
-    } else if (consumo <= 20) {
-        double custo = consumo * 1.32;
-        println("a sua conta foi: R$ " + custo);
-    } else if (consumo <= 30) {
-        double custo = consumo * 4.64;
-        println("a sua conta foi: R$ " + custo);
-    } else if (consumo <= 50) {
-        double custo = consumo * 6.62;
-        println("a sua conta foi: R$ " + custo);
+    if (consumo < 0) {
+        println("Consumo inválido.");
     } else {
-        double custo = consumo * 9.64 ;
-        println("a sua conta foi: R$ " + custo);
+        if (consumo <= 10) {
+            custo = 7.59;
+        } else if (consumo <= 20) {
+            custo = consumo * 1.32;
+        } else if (consumo <= 30) {
+            custo = consumo * 4.64;
+        } else if (consumo <= 50) {
+            custo = consumo * 6.62;
+        } else {
+            custo = consumo * 9.64;
+        }
+        println("Valor da conta: R$ " + custo);
     }
 }
