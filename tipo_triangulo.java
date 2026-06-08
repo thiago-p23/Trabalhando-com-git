@@ -2,34 +2,30 @@ import static java.lang.IO.*;
 
 void main() {
 
-    //Entrada
-
-    println("insira o valor do lado A: ");
+    println("Informe o lado A:");
     float ladoA = Float.parseFloat(readln());
 
-    println("insira o valor do lado B: ");
+    println("Informe o lado B:");
     float ladoB = Float.parseFloat(readln());
 
-    println("insira o valor do lado C: ");
+    println("Informe o lado C:");
     float ladoC = Float.parseFloat(readln());
 
-    //Processo
-
-    float somaAB = ladoA + ladoB;
-    float somaAC = ladoA + ladoC;
-    float somaBC = ladoC + ladoB;
-
-    //Saida
-
-    if (somaAB > ladoC && somaAC > ladoB && somaBC > ladoA ){
-        if (ladoA == ladoB && ladoC == ladoB && ladoA == ladoC ){
-            println("esse triangulo e um equilatero");
-        } else if (ladoA == ladoB || ladoC == ladoB || ladoC == ladoA) {
-            println("ele e isoceles");
+    if (ladoA <= 0 || ladoB <= 0 || ladoC <= 0) {
+        println("Os lados devem ser maiores que zero.");
+    } else if (ladoA + ladoB > ladoC &&
+               ladoA + ladoC > ladoB &&
+               ladoB + ladoC > ladoA) {
+        if (ladoA == ladoB && ladoB == ladoC) {
+            println("Triângulo Equilátero.");
+        } else if (ladoA == ladoB ||
+                   ladoA == ladoC ||
+                   ladoB == ladoC) {
+            println("Triângulo Isósceles.");
         } else {
-            println("isso e um triangulo escaleno");
+            println("Triângulo Escaleno.");
         }
     } else {
-        println("isso nao e um triangulo");
+        println("Os valores informados não formam um triângulo.");
     }
 }
