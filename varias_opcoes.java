@@ -2,28 +2,39 @@ import static java.lang.IO.*;
 
 void main() {
 
-    //Entrada
+    int opcao = 0;
 
-    println("1 - opecao 1");
-    println("2 - opecao 2");
-    println("3 - opecao 3");
-    println("4 - sair");
+    while (opcao != 4) {
 
-    println("digite um falor de 1 a 4 ");
-    String valor = readln();
+        println("\n===== MENU =====");
+        println("1 - Opção 1");
+        println("2 - Opção 2");
+        println("3 - Opção 3");
+        println("4 - Sair");
 
-    //Processo + Saida
+        opcao = Integer.parseInt(readln("Digite uma opção: "));
 
-    if (valor.equals("1")) {
-        println("voce selecionou a opicao 1");
-    } else if (valor.equals("2")) {
-        println("voce selecionou a opicao 2");
-    } else if (valor.equals("3")) {
-        println("voce selecionou a opicao 3");
-    } else if (valor.equals("4")) {
-        println("voce selecionou sair");
-    } else{
-        println("valor invalido");
+        switch (opcao) {
+
+            case 1:
+                println("Você selecionou a opção 1.");
+                break;
+
+            case 2:
+                println("Você selecionou a opção 2.");
+                break;
+
+            case 3:
+                println("Você selecionou a opção 3.");
+                break;
+
+            case 4:
+                println("Encerrando o programa...");
+                break;
+
+            default:
+                println("Opção inválida!");
+        }
     }
-    println("fim do programa");
+    println("Fim do programa.");
 }
